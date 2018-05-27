@@ -7,6 +7,8 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
   chown -R www-data:www-data /var/www/html
+
+VOLUME ["/code"]
 WORKDIR /var/www/html
 CMD ["nginx"]
 EXPOSE 30000
